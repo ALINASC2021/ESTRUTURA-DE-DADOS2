@@ -1,0 +1,203 @@
+52° RESPOSTA
+#include <stdio.h>
+#include <stdlib.h>
+
+int fibonacci(int n){
+    if(n == 1) 
+        return 0;
+    else{
+        if(n == 2) 
+            return 1;
+        else
+            return fibonacci(n - 1) + fibonacci(n - 2);
+    }
+}
+
+int main () {
+
+    int n;
+
+    printf("Digite um valor maior que zero: ");
+    scanf("%d", &n);
+
+    printf("O termo %d eh o termo: %d\n", n, fibonacci(n));
+
+    return 0;
+}
+
+53° RESPOSTA
+#include <stdio.h>
+
+int main() {
+  int x,         
+      n,        
+      potencia, 
+      contador; 
+  
+  printf("\n\tCalculo de potencias\n");
+  printf("\nDigite um numero inteiro: ");
+  scanf("%d", &x);
+  printf("Digite um numero um inteiro nao-negativo: ");
+  scanf("%d", &n);
+  
+ 
+  potencia = 1;
+  contador = 0;
+  
+  
+  while (contador != n) {
+    potencia = potencia * x;
+    contador = contador + 1;
+  }
+  
+  printf("\nO valor de %d elevado a %d: %d\n", x, n, potencia);
+  return 0;
+}
+
+57° RESPOSTA
+#include <stdio.h>
+
+
+int soma(int valor){
+    if(valor == 0){
+        return 0;
+    }else{
+        return valor + soma(valor -1);
+     }
+}
+
+    int main(){
+    int num=0, i=0, r=0;
+    
+    printf("Digite o numero\n");
+    scanf("%d", &num);
+    
+    r=soma(num);
+    printf("Valor somado %d\n", r);
+}
+
+56° RESPOSTA
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <locale.h>
+ 
+int soma_digitos (int num)
+{
+   int a,b;
+ 
+//Atribuição do valor do ultimo digito do número à variável “a”.
+   a = num % 10;
+ 
+//Remoção o ultimo dígito do número “num” e atribui o novo valor para “b”
+   b = (num - a)/10;
+ 
+//Testa se o número ainda tem mais algum dígito ou não. Se não tiver, então é retornado só o valor do próprio dígito.
+   if (b <= 0)
+   {
+       return a;
+   }
+   else
+   {
+// Se tiver mais algum dígito. Soma o valor do último número ao próximo ultimo número.
+       return a + soma_digitos(b);
+   }
+}
+ 
+void somaMizera()
+{
+ 
+   int n, soma;
+ 
+   printf("Informe o número: ");
+   scanf("%i", &n);
+ 
+   soma = soma_digitos(n);
+ 
+   printf("A soma dos digitos eh: %i", soma);
+ 
+ 
+   system("pause");
+ 
+}
+
+57° RESPOSTA
+#include <stdlib.h>
+#include <stdio.h>
+
+void Soma()
+{
+   int num = 0, i = 1;
+   printf("Digite um numero: ");
+   scanf("%i", &num);
+
+   while (i < num)
+   {
+       printf("%i + 1 = %i\n", i, i +1);
+       i++;
+   }
+}
+
+
+58° RESPOSTA
+#include<stdio.h>
+
+int numero;
+int aux=0;
+int k=0;
+int verifica(int n)
+{
+    if(n==0)
+      return 0;
+     else
+    {
+     if(aux==(n %10))
+     {
+        k++;
+     }
+     n=n / 10;
+     return verifica(n);
+    }
+return 0;
+ }
+int main()
+{
+   printf("Digite um numero:");
+   scanf("%d",&numero);
+   printf("Digite o numero a ser verificado:");
+   scanf("%d",&aux);
+   verifica(numero);
+   printf("Vezes de numeros repetidos %d",k);
+   return 0;
+}
+
+59° RESPOSTA
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+
+    int num;
+    int bin[7];
+    int aux;
+
+    printf("Digite o número (base decimal) para ser convertido: ");
+    scanf("%d", &num);
+
+    for (aux = 7; aux >= 0; aux--) {
+        if (num % 2 == 0) {
+            bin[aux] = 0;
+            num = num / 2;
+        }
+        else {
+            bin[aux] = 1;
+            num = num / 2;
+        }
+    }
+
+    for (aux = 0; aux <= 7; aux++) {
+        printf("%d", bin[aux]);
+    }
+
+    return 0;
+}
