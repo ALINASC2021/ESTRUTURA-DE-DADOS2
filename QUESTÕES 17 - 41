@@ -1,0 +1,628 @@
+17° RESPOSTA
+#include "stdio.h"
+
+void verifica(int n);
+
+void main() {
+  for (int n=1000; n<=9999; n++)
+    verifica(n);
+}
+
+void verifica(int n) {
+  int parte1 = n / 100;
+  int parte2 = n % 100;
+  int sm = parte1 + parte2;
+  int prod = sm * sm;
+
+  if (prod == n) {
+     printf("%d\n", n);
+     printf("-------------------------\n");
+     printf("%2d + %2d = %d * %d = %d.\n\n", parte1, parte2, sm, sm, prod);
+  }
+}
+
+18° RESPOSTA
+#include <stdio.h>
+
+int main() {
+  long int a,b,c;
+  int n,cont;
+  double r;
+
+  printf("Digite quantos termos da sequencia de Fibonacci voce quer:\n");
+  scanf("%d", &n);
+
+  if (n <= 1) {
+    printf("Numero de termos invalido\n");
+  }
+  else {
+    
+    a = 1;
+    b = 1;
+    cont = 2;
+    printf("\n\n1\n1\n");
+
+    while(cont < n) {
+      c = a + b;
+      r = c;
+      r = r/b;
+      printf("%ld %.15lf\n", c, r);
+      a = b;
+      b = c;
+      cont = cont + 1;
+      //eh a mesma coisa: cont++;
+    }
+  }
+
+  return(0);
+}
+
+
+19° RESPOSTA
+#include<stdio.h> 
+#include<stdlib.h> 
+
+int main () 
+{ 
+int soma,i,j,n; 
+
+printf ("Digite o numero: \n");
+scanf ("%d",&n);
+
+for (i=1;i<n;i++) 
+  { 
+    soma=0; 
+    for (j=1;j<i;j++) {
+      if (i%j==0)  
+      soma=soma+j; 
+    } 
+  if (soma==i) 
+  printf("\nNumeros perfeitos:%d",i); 
+  }
+printf ("\n\n");
+
+return 0;
+}
+
+
+20° RESPOSTA
+#include<stdio.h>
+
+int main() {
+ int num, i, resultado = 0;
+ 
+ printf("Digite um numero: ");
+ scanf("%d", &num);
+ 
+ for (i = 2; i <= num / 2; i++) {
+    if (num % i == 0) {
+       resultado++;
+       break;
+    }
+ }
+ 
+ if (resultado == 0)
+    printf("%d eh um numero primo\n", num);
+ else
+    printf("%d nao eh um numero primo\n", num);
+ 
+ return 0;
+}
+  
+22° RESPOSTA
+#include<stdio.h>
+
+int main()
+
+{
+    int dividendo, divisor, quociente,x,resto,resultado;
+    quociente = 0;
+    x = dividendo;
+
+    printf("dividendo");
+    scanf("%d",& dividendo);
+    printf("divisor");
+    scanf("%d",& divisor);
+
+    while (x >= divisor){
+        x = x - divisor;
+        quociente = quociente + 1;
+        resto = x;
+        resultado = dividendo / divisor;
+        printf("%d",resultado);
+        x++;
+
+    }
+    return 0;
+}
+
+23° RESPOSTA
+#include <stdio.h>
+
+int main()
+{
+  int n;     
+  int fator;   
+  int mult;    
+
+
+  printf("Decomponho um numero dado em fatores primos.\n");
+  printf("Entre com o numero (> 1) a ser decomposto: ");
+  scanf("%d", &n);
+  printf("Decomposicao de %d em fatores primos:\n", n);  
+
+  fator = 2;
+  while (n > 1) 
+    {
+      mult = 0;
+      while (n % fator == 0) 
+        {
+          mult ++;
+          n = n / fator; 
+        }
+      if (mult != 0) 
+        {
+          printf("  fator %d multiplicidade %d\n", fator, mult); 
+        }
+      fator++; 
+    }
+
+  return 0;
+}
+
+
+24° RESPOSTA
+#include <stdio.h>
+
+int main(){
+    int a, b, aux, i;
+    
+    printf("Digite dois numeros: ");
+    scanf("%d %d", &a, &b);
+       
+    if(a > b){
+        
+        aux = a;
+        a = b;
+        b = aux;
+    }
+    for(i=a; i > 1 && !(a%i==0 && b%i==0); i--){
+    }
+    printf("MDC %d\n",i);
+}
+
+
+25° RESPOSTA
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+    int a, n1, n2, resto;
+    printf("Digite dois numeros: ");
+    scanf("%d %d", &n1,&n2);
+    for(a=1; a>0; a++){
+        resto = (n1*a) % n2;
+        if(resto==0) break;
+    }
+    printf("O MMC entre %d e %d eh: %d\n",n1,n2,n1*a);
+}
+
+26° RESPOSTA
+#include <stdio.h>
+
+void idadeVeia()
+{
+   int a = 0, b = 0, i = 0, j = 0;
+
+   while (j < 1)
+   {
+       i += 1;
+       a = i * 2;
+       b = i;
+       printf("\n%i", a + b);
+       if(a + b == 81)
+       {
+           i = a + b;
+           printf("\n\nCondição atendida.A = %i | B = %i | Idade = %i", a, b, a + b);
+           break;
+       }
+   }
+}
+
+
+27° RESPOSTA  
+#include <time.h>
+#include <stdio.h>
+#include <conio.h>
+#include <stdlib.h>
+
+void reflexo()
+{
+   clock_t start_t, end_t;
+   double total_t;
+   int i = 0, num = 0;
+   printf("Digite o numero que voce ve na tela");
+   printf("Agora!");
+   start_t = clock();
+
+   printf("%i", rand() % 100);
+   scanf("%i", &num);
+
+   end_t = clock();
+
+   printf("Tempo total = %d", end_t - start_t);
+}
+
+28° RESPOSTA
+#include <stdio.h>
+#include <stdlib.h>
+
+int main (void)
+{
+  
+  int a, b, soma;
+  
+  printf("Digite o numero do primeiro lado: ");
+  scanf("%d", &a); 
+  
+  printf("Digite o numero do segundo lado: ");
+  scanf("%d", &b); 
+  soma = a + b;
+  
+  printf("O valor da soma dos lados = %d\n", soma); 
+  
+  return(0);
+}
+
+
+29° RESPOSTA
+#include<stdio.h>
+#include <stdlib.h>
+#include<math.h>
+
+float media (int n, float *vnotas);
+int main (void)
+{
+    float vnotas[10];
+    float media_notas;
+    int i;
+    float numero =0;
+
+    i = 0;
+    while ((numero >= 0) && (i < 10))
+    { 
+    printf("Digite os valores das notas: ");
+    scanf("%f", &numero);
+    if (numero >= 0) 
+  	  {
+  		vnotas[i] = numero;
+		    i++;
+  	    }
+      }
+  
+      media_notas = media (i, vnotas);
+      printf ( "\nMedia = %.1f \n", media_notas);
+      
+      return 0;
+    }
+    
+    float media (int n, float *vnotas)
+    {
+      int i;
+      float m = 0, soma = 0;
+
+      
+      for (i = 0; i < n; i++)
+        soma = soma + vnotas[i];
+
+      m = soma / n;
+      return m;
+    }
+    
+30° RESPOSTA    
+#include <stdio.h>
+#include <string.h>
+
+
+void acha()
+{
+   char num[100] = {};
+   int number;
+   printf("Digite um numero");
+   scanf("%d", &number);
+
+   sprintf(num, "%d", number);
+
+
+   for (int i = 0; i < strlen(num); ++i) {
+       if(num[i] == '3'){
+           printf("Encontrei o 3 na posicao %i\n", i);
+           break;
+       }else{
+           printf("Deu ruim");
+           break;
+       }
+   }
+}
+
+31° RESPOSTA
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+void achaNum()
+{
+   int num1 = 0, num2 = 0;
+   char number1[100] = {}, number2[100] = {},n1[100] = {};
+
+
+   printf("Digite o primeiro numero: ");
+   scanf("%i", &num1);
+
+   sprintf(number1, "%i", num1);
+
+   printf("Digite o segundo numero: ");
+   scanf("%i", &num2);
+
+   sprintf(number2, "%i", num2);
+
+   for (int i = 0; i <= strlen(number1);) {
+       if(number1[i] == number2[i])
+       {
+           n1[i] = number1[i];
+       }
+       i++;
+   }
+   puts(n1);
+}
+
+32° RESPOSTA
+#include <stdlib.h>
+#include <stdio.h>
+
+void start()
+{
+   int n, divisor, r, soma1, soma2;
+
+   for (n = 2; n <= 100000; n++)
+   {
+       soma1 = 1;
+       for (divisor = 2; divisor <= n/2; divisor++)
+       {
+           if (n % divisor == 0) soma1+=divisor; //calcula a soma dos divisores
+       }
+
+       soma2 = 1;
+
+       if (soma1 != n) for (divisor = 2; divisor <= soma1/2; divisor++)
+       {
+           if (soma1 % divisor == 0) soma2+=divisor; //calcula a soma dos divisores
+       }
+
+       if (soma2 == n) //verificar se a soma dos divisores eh igual ao numero
+       {
+           printf("%d e %d sao amigos\n",n, soma1);
+       }
+
+   }
+   }
+
+33° RESPOSTA
+#include <stdio.h>
+
+int main ()
+{
+    int n, divisor, r, soma1, soma2;
+    
+    for (n = 2; n <= 1000; n++)
+    {        
+        soma1 = 1;
+        for (divisor = 2; divisor <= n/2; divisor++)
+        {            
+            if (n % divisor == 0) soma1+=divisor; 
+        }
+        soma2 = 1;
+        if (soma1 != n) for (divisor = 2; divisor <= soma1/2; divisor++)
+        {            
+            if (soma1 % divisor == 0) soma2+=divisor; 
+        }
+        if (soma2 == n) 
+        {
+            printf("\%d e %d sao amigos\n",n, soma1);
+        }        
+    }
+    return 0;
+}
+
+34° RESPOSTA
+#include <stdio.h>
+#include <time.h>
+
+int random();
+void dicas(int number, int password, int attempt);
+
+int main()
+{
+    int continuar=1,
+        password,
+        attempt,
+        number;
+
+    do
+    {
+        system("cls || clear");
+        printf("Sorteando numero entre 1 e 500...\n");
+        password = random();
+
+        printf("Comecou! Tente adivinhar o numero!\n\n");
+        attempt = 0;
+
+        do
+        {
+            attempt++;
+            printf("Tentativa %d: ", attempt);
+            scanf("%d", &number);
+            dicas(number,password,attempt);
+        }
+        while( number != password);
+
+        printf("Digite 0 para sair, ou qualquer outro numero para continuar: ");
+        scanf("%d", &continuar);
+    }
+    while(continuar);
+
+}
+
+int random()
+{
+    srand( (unsigned)time(NULL) );
+
+    return (1 + rand()%500);
+}
+
+void dicas(int number, int password, int attempt)
+{
+    if(number > password)
+                printf("O numero sorteado e menor que %d\n\n", number);
+    else
+        if(number < password)
+            printf("O numero sorteado e maior que %d\n\n", number);
+        else
+            printf("Parabens! Voce acertou o numero em %d tentativas!\n\n", attempt);
+        
+}
+
+35° RESPOSTA
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int valor, i, divisores = 0, opcao;
+
+    do{
+        do{
+            printf("Digite um valor maior que 1: ");
+            scanf("%d", &valor);
+        }while(valor < 2);
+
+        printf("Divisores de %d: ", valor);
+        for(i = 2; i <= valor/2; i++){
+            if(valor % i == 0){
+                printf("%d ", i);
+                divisores++;
+            }
+        }
+        printf("\n");
+
+        if(divisores != 0)
+            printf("%d nao e primo\n", valor);
+        else
+            printf("%d e primo\n", valor);
+        printf("\n1 - Digitar outro valor\n2 - Sair\n");
+        scanf("%d", &opcao);
+    }while(opcao != 2);
+}
+
+36° RESPOSTA
+#include <stdio.h>
+
+int main() 
+{
+  int i, j, n,      
+    mult,           
+    cont;          
+  
+  printf("\n\tCalculo dos n primeiros multiplos de dois numeros simultaneos.\n");
+  printf("\nDigite o numero de multiplos a serem impressos: ");
+  scanf("%d", &n);
+  printf("Digite os dois numeros: ");
+  scanf("%d %d", &i, &j);
+  
+  
+  mult = 0;
+  cont = 0; 
+  
+  printf("Os %d primeiros multiplos de %d ou de %d sao:", n, i, j);
+  while (cont < n)
+    {
+      
+      if (mult%i == 0 || mult%j == 0)
+	{
+	  printf(" %d", mult);
+          cont = cont + 1;;
+	}
+      
+      mult = mult + 1;   
+    }
+  printf("\n"); 
+
+  return 0;
+}
+
+38° RESPOSTA
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    float chico = 1.5, ze = 1.1;
+    int ano = 0;
+
+    while(chico >= ze){
+        
+        chico += 0.02;
+        
+        ze += 0.03;
+        
+        ano++;
+        printf("Chico: %.2f\tZe: %.2f\tAno: %d\n", chico, ze, ano);
+    }
+    printf("Sao necessarios %d anos!\n\n", ano);
+}
+  
+40° RESPOSTA
+#include <stdio.h>
+#include <stdlib.h>
+
+void main ()
+{
+   int Segundos = 0, Velocidade0 = 2;
+
+   while(Segundos < 10){
+
+    Velocidade0 = Velocidade0 * 2;
+    Segundos += 1;
+
+    printf("Segundos:%d\n Velocidade:%d\n", Segundos, Velocidade0);
+
+
+   }
+}
+
+
+41° RESPOSTA
+#include <stdio.h>
+
+float germina(int milhos){
+   int sementes = milhos  * 2;
+   int resultado_germinacao = sementes - (sementes * 0.10);
+
+   return resultado_germinacao;
+}
+void milho()
+{
+   float toneladas = 0.0000, toneladas_objetivo = 100000.0000;
+   int sementes = 150, i = 0;
+
+   while (i < 100)
+   {
+       float germinacao = germina(sementes);
+       if(toneladas > toneladas_objetivo){
+           printf("%i",i);
+           break;
+       }
+       toneladas += germinacao / 1000;
+
+       sementes = (int)germinacao;
+       i += 1;
+   }
+}
